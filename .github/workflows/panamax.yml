@@ -12,6 +12,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout source
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
       - name: Build Panamax Docker images
         uses: docker/build-push-action@v1.1.0
         with:
@@ -24,15 +28,15 @@ jobs:
           # Docker repository to tag the image with
           repository: jianglibo/panamax
           # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-          # tags: {{ $GITHUB_REF}}
+          # tags: ${{ GITHUB_REF}}
           # Automatically tags the built image with the git reference as per the readme
           tag_with_ref: true
           # Automatically tags the built image with the git short SHA as per the readme
           # tag_with_sha: # optional
           # Path to the build context
-          # path: ./panamax
+          path: panamax
           # Path to the Dockerfile (Default is '{path}/Dockerfile')
-          dockerfile: panamax/Dockerfile
+          # dockerfile: panamax/Dockerfile
           # Sets the target stage to build
           # target: # optional
           # Always attempt to pull a newer version of the image
