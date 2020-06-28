@@ -50,4 +50,5 @@ jobs:
           # Adds labels with git repository information to the built image
           # add_git_labels: # optional
           # Whether to push the image
+          # 
           push: true
