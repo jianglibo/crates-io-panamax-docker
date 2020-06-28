@@ -22,7 +22,7 @@ jobs:
           # Server address of Docker registry. If not set then will default to Docker Hub
           registry: registry.fh.gov.cn
           # Docker repository to tag the image with
-          repository: jianglibo
+          repository: jianglibo/panamax
           # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
           # tags: {{ $GITHUB_REF}}
           # Automatically tags the built image with the git reference as per the readme
@@ -30,7 +30,7 @@ jobs:
           # Automatically tags the built image with the git short SHA as per the readme
           # tag_with_sha: # optional
           # Path to the build context
-          path: panamax
+          path: ./panamax
           # Path to the Dockerfile (Default is '{path}/Dockerfile')
           # dockerfile: # optional
           # Sets the target stage to build
