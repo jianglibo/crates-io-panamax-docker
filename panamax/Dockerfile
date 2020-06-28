@@ -1,5 +1,6 @@
 FROM rust
 RUN set -eux; \
     cargo install panamax; \
-    panamax init my-mirror; \
-    panamax sync my-mirror
+    panamax init my-mirror
+ADD ./mirror.toml my-mirror
+RUN panamax sync my-mirror
