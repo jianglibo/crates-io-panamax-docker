@@ -1,4 +1,7 @@
 FROM rust
+
+WORKDIR /
+
 RUN set -eux; \
     cargo install panamax; \
     panamax init my-mirror
