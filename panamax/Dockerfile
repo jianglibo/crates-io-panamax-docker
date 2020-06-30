@@ -6,4 +6,5 @@ RUN set -eux; \
     cargo install panamax; \
     panamax init my-mirror
 ADD mirror.toml my-mirror
-RUN panamax sync my-mirror
+# line bellow will cause disk space full.
+# RUN panamax sync my-mirror
