@@ -8,3 +8,4 @@ RUN set -eux; \
 ADD mirror.toml my-mirror
 # line bellow will cause disk space full.
 # RUN panamax sync my-mirror
+CMD [ "panamax", "sync", "my-mirror" ]
